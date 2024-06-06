@@ -1,8 +1,11 @@
+import React from 'react';
+import { Hero } from '../components';
+
 const Landing = () => {
   return (
-    <div>
-      <h1>Landing</h1>
-    </div>
+    <React.Fragment>
+      <Hero />
+    </React.Fragment>
   );
 };
 
