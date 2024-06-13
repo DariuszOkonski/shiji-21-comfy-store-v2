@@ -1,10 +1,13 @@
 import React from 'react';
+import ProductsGrid from './ProductsGrid';
+import ProductsList from './ProductsList';
 
 const ProductsContainer = () => {
   return (
-    <div>
-      <h1>ProductsContainer</h1>
-    </div>
+    <React.Fragment>
+      <ProductsList />
+      <ProductsGrid />
+    </React.Fragment>
   );
 };
 
