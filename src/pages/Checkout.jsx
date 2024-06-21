@@ -1,8 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { CheckoutForm, SectionTitle, CartTotals } from '../components';
+import { toast } from 'react-toastify';
+import { redirect, useLoaderData } from 'react-router-dom';
+
+export const loader = (store) => () => {
+  const user = store.getState().cartState.user;
+
+  if (!user) {
+    toast.warn('you must be logged in to checkout');
+    return redirect('/login');
+  }
+
+  return null;
+};
 
 const Checkout = () => {
+  useLoaderData();
   const cartTotal = useSelector((state) => state.cartState.cartTotal);
 
   if (cartTotal === 0) {
